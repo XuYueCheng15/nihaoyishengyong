@@ -1,0 +1,60 @@
+//
+//  pchFile.pch
+//  nihaoyishengyong
+//
+//  Created by 德医互联 on 2017/4/10.
+//  Copyright © 2017年 德医互联. All rights reserved.
+//
+
+#ifndef pchFile_pch
+#define pchFile_pch
+
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_IPHONE_4S (IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 480.0f)
+#define IS_IPHONE_5 (IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 568.0f)
+#define IS_IPHONE_6 (IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 667.0f)
+#define IS_IPHONE_6P (IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 736.0f)
+
+#define RGBA(redValue,greenValue,blueValue,alphaValue) [UIColor colorWithRed:(float)(redValue)/255.0 green:(float)(greenValue)/255.0 blue:(float)(blueValue)/255.0 alpha:(alphaValue)]
+
+//获取屏幕 宽度、高度
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+
+#define IOS_SYSTEM_STRING [[UIDevice currentDevice] systemVersion]
+#define HudHiddenTime (1.5)
+#define ValidateCodeNum  (6)
+#define NetworkFail ([NSString getLaoWithChiness:@"网络请求异常"]) //@"网络连接失败"
+#define TopView [UIApplication sharedApplication].keyWindow
+#define DefineMJRefreshFooterHeight ([WorkOutWordsSize countDeviceFloat:27]+[WorkOutWordsSize calculateSizeWithString:@"11" Font:[WorkOutWordsSize fontSize:14 isbold:NO] MaxWidth:MAXFLOAT MaxHeight:MAXFLOAT].height)
+#define DefineMJRefreshHeaderHeight ([WorkOutWordsSize countDeviceFloat:35]+2*[WorkOutWordsSize calculateSizeWithString:@"11" Font:[WorkOutWordsSize fontSize:12 isbold:NO] MaxWidth:MAXFLOAT MaxHeight:MAXFLOAT].height)
+#endif /* pchFile_pch */
+
+
+
+
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "AppDelegate.h"
+
+#import "RDVTabBarController.h"
+#import "RDVTabBarItem.h"
+#import "MJRefresh.h"
+#import "MWPhotoBrowser.h"
+#import "MBProgressHUD.h"
+
+#import "NSString+Extension.h"
+#import "UIColor+hexColor.h"
+#import "WorkOutWordsSize.h"
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+#import "HMSegmentedControl.h"
+#import "MJExtension.h"
+#import "APIClient.h"
+#import "APIConfig.h"
+#import "DefineNSUserDefault.h"
+#import "DefineNotificationKey.h"
+
+#endif
